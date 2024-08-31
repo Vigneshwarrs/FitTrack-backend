@@ -19,7 +19,9 @@ module.exports.setGoal = async (req, res) => {
             recoverySessions,
             muscleGroup
         } = req.body;
+        console.log(req.user);
         const {_id} = req.user;
+
 
         // Ensure all required fields are present based on goal type
         if (!type) {

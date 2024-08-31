@@ -24,7 +24,7 @@ const goalSchema = new mongoose.Schema(
     target: {
       type: String,
       required: function () {
-        return !["flexibility", "endurance", "strength", "cardio"].includes(
+        return !["flexibility", "endurance", "strength", "cardio", "recovery"].includes(
           this.type
         );
       },
@@ -32,7 +32,7 @@ const goalSchema = new mongoose.Schema(
     duration: {
       type: String,
       required: function () {
-        return ["cardio", "endurance", "recovery", "strength"].includes(this.type);
+        return ["cardio", "endurance", "recovery"].includes(this.type);
       },
     },
     weight: {
@@ -54,7 +54,7 @@ const goalSchema = new mongoose.Schema(
       },
     },
     distance: {
-      type: Number,
+      type: String,
       required: function () {
         return ["cardio", "endurance"].includes(this.type);
       },
